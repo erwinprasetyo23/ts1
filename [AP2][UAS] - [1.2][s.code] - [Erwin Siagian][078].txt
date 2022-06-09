@@ -1,0 +1,18 @@
+// File Header
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+int login(){
+char nama[20];
+int member;
+
+cout<<"Masukkan Nama :";
+cin>>nama;
+cout<<"Masukkan No Member:";
+cin>>member;
+cout<<endl;
+cout<<endl;
+return 0;
+}

@@ -1,0 +1,92 @@
+// Main Program
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include "header.h"
+
+using namespace std;
+// membuat fungsi say_hello()
+void say_hello(){
+    cout << "Hello,Selamat Datang Di Toko Ap 2 !\n";
+}
+class kasir{
+public:
+};
+int main()
+{
+    
+    int jumlah_beli, bayar, diskon, jumlah[100], harga[100],total[50];
+    float total_semua;
+    char ulang;
+    string nama_barang[100];
+    say_hello();
+    
+    cout<<"===========================\n";
+    cout<<"          Program Uasku    \n";
+    cout<<"===========================\n";
+    login();
+
+    cout<<"Masukan Jumlah Jenis Barang Yang di Beli :";
+    cin>> jumlah_beli; 
+
+    for (int i=0;i<jumlah_beli;i++){
+        cout<<"\nMasukan Barang ke- "<<i+1<<"\n\n";
+        cout<<"Nama Barang : ";
+        cin>>nama_barang[i]; 
+
+        cout<<"Jumlah Barang : ";
+        cin>>jumlah[i]; 
+
+        cout<<"Harga Barang : ";
+        cin>>harga[i]; 
+
+        total[i] = jumlah[i]*harga[i]; 
+        total_semua += total[i]; 
+
+    }
+        cout<<"\n===============";
+        cout<<"\n Struk Belanja";
+        cout<<"\n===============";
+
+    cout<<"\nNo Barang  Jumlah Harga Total\n";
+    for (int i=0; i<jumlah_beli; i++ ){
+        cout<<i+1<<setw(8)<<nama_barang[i]<<setw(10)<<jumlah[i]<<setw(12)<<harga[i]<<setw(12)<<total[i]<<endl;
+    }
+
+    
+        if(total_semua>=100000){
+        diskon=0.06*total_semua;
+    }
+        else if(total_semua>= 50000){
+        diskon=0.04;
+    }
+        else if(total_semua>= 25000){
+        diskon=0.02;
+    }
+        else{
+        diskon=0;
+    }
+
+        cout<<"Jumlah Bayar : Rp."<<total_semua<<endl;
+        cout<<"Diskon : Rp."<<diskon<<endl;
+        cout<<"Total Bayar : Rp."<<total_semua - diskon<<endl;
+        cout<<"Bayar : Rp.";
+        cin>>bayar;
+        cout<<"Kembalian : Rp."<<(bayar-(total_semua-diskon))<<endl;
+
+    {
+        int var = 2;
+        int *pVar = &var;
+
+        cout<<"var = "<<var<<endl;
+        cout<<"pVar = "<<*pVar<<endl;
+        cout<<"====="<<endl<<endl;
+        *pVar= 109;
+        cout<<"var = "<<var<<endl;
+        cout<<"pVar = "<<*pVar<<endl;
+        cout << "Terimakasih...";
+        cout << endl;
+
+    return 0;
+}
+}
